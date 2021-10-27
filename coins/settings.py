@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@kfpxxk&*0%a8r2nmgry*mdyxuku1&nv&8+kcq82q2-%=n!&@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
 
 DB_USER_NAME = os.environ.get("DB_USER_NAME", "user")
 DB_USER_PASSWORD = os.environ.get("DB_USER_PASSWORD", "")
