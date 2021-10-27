@@ -24,6 +24,10 @@ A general purpose wallet that allows customer to view their account, transfer fu
 1. PostgreSQL
 1. Clone the repo in local
 1. Link the postgreSQL config in `coins/settings.py` file
+1. Export the env variables specific to postgres user name and password,
+    
+    export DB_USER_NAME={db-user-name}\
+    export DB_USER_PASSWORD={db-password}
 1. Install python dependencies  `pip intall -r requirements.txt`
 1. Do django migrations
 1. Run development server - `python manage.py runserver`
@@ -61,7 +65,7 @@ Flake8 is used as static code analyzer to improve code quality.
 ### Future Scope ###
 
 1. Expose apis to add money to wallet, extending payment transfer to merchant transfer.
-1. To move the code to containerised version - Docker.
+1. Docker containers setup is ready - network linking is pending.
 1. To add code analyzer in pre commit hook.
 
 ---
