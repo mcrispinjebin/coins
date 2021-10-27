@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,10 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@kfpxxk&*0%a8r2nmgry*mdyxuku1&nv&8+kcq82q2-%=n!&@4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0"]
 
+DB_USER_NAME = os.environ.get("DB_USER_NAME", "user")
+DB_USER_PASSWORD = os.environ.get("DB_USER_PASSWORD", "")
 
 # Application definition
 
@@ -85,8 +88,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'coins_wallet',
-        'USER': 'crispin',
-        'PASSWORD': '',
+        'USER': DB_USER_NAME,
+        'PASSWORD': DB_USER_PASSWORD,
+        # 'HOST': 'db_host_ip',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
